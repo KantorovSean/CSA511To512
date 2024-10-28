@@ -13,9 +13,43 @@ public class  Board
   private int currentLetterValue; 
 
   /* your code here - constructor(s) */ 
-  
+  Board()
+  {
+    //setting the phrase
+    phrase = loadPhrase();
+    
+    //setting up how much of the phrase they have solved so far
+    for (int index = 0; index < phrase.length(); index++)
+    {
+      if (phrase.substring(index, index + 1).equals(" "))
+      {
+        solvedPhrase += " ";
+      }
+      else 
+      {
+        solvedPhrase += "_";
+      }
+    }
+
+    //setting the score val per correct letter
+    setLetterValue();
+  }
+
   /* your code here - accessor(s) */
-  
+  public int getCurrentLetterValue()
+  {
+    return currentLetterValue;
+  }
+
+  public String getSolvedPhrase()
+  {
+    return solvedPhrase;
+  }
+
+  public String getPhrase()
+  {
+    return phrase;
+  }
   /* your code here - mutator(s)  */
 
 
@@ -42,7 +76,7 @@ public class  Board
     int numOfLines = 0;
     try 
     {
-      Scanner sc = new Scanner(new File("phrases.txt"));
+      Scanner sc = new Scanner(new File("Trinket Download-PhraseSolverGame_Starter_2025-ddad487164\\phrases.txt"));
       while (sc.hasNextLine())
       {
         tempPhrase = sc.nextLine().trim();
@@ -55,7 +89,7 @@ public class  Board
     try 
     {
       int count = 0;
-      Scanner sc = new Scanner(new File("phrases.txt"));
+      Scanner sc = new Scanner(new File("Trinket Download-PhraseSolverGame_Starter_2025-ddad487164\\\\phrases.txt"));
       while (sc.hasNextLine())
       {
         count++;
