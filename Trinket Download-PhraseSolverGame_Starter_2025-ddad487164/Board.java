@@ -104,26 +104,43 @@ public class  Board
     }  
     
     return tempPhrase;
-  }  
+  } 
 
+/*
+ * Precondition:
+ * user must guess a phrase
+ * Postconditions:
+ * User-inputted phrase is evaluated
+ * the correctly guessed phrase is outputted
+ */
   public boolean guessLetter(String guess)
   {
+    //foundLetter variable is initialized to false
     boolean foundLetter = false;
+    //newSolvedPhrase variable is initialized as an empty string
     String newSolvedPhrase = "";
+    //lastIndex variable is initialized to the value 0
     int lastIndex = 0;
-    
+
+    //for loop iterates through the entire phrase
     for (int i = 0; i < phrase.length(); i++)
     {
+      //conditional checks if letter was correctly guessed
       if ((String.valueOf(phrase.charAt(i)).equals(guess)))
       {
+        //newSolvedPhrase variable updated each iteration if letter is correctly guessed
         newSolvedPhrase += solvedPhrase.substring(lastIndex, i) + guess;
+        //lastIndex variable is being incremented on each iteration
         lastIndex = i + 1;
+        //foundLetter variable is changed to true
         foundLetter = true;
       }
     }
-    
+    //sets solvedPhrase variable equal to newSolvedPhrase and the solvedPhrase
     solvedPhrase = newSolvedPhrase + solvedPhrase.substring(lastIndex);
+    //Prints out final solvedPhrase
     System.out.println(solvedPhrase);
+    //foundletter boolean is outputted to the program
     return foundLetter;
   } 
 } 
