@@ -2,7 +2,10 @@
  * Activity 2.5.2
  * 
  * A Player class the PhraseSolverGame
+ * Laasya Koduri, Sean Kantorov 
+ * Period 7
  */
+//Added attributes for Player class
 public class Player
 {
   /* your code here - attributes */

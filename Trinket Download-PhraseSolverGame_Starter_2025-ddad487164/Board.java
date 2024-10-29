@@ -2,6 +2,8 @@
  * Activity 2.5.2
  *
  * A Board class the PhraseSolverGame
+ * Laasya Koduri, Sean Kantorov 
+ * Period 7
  */
 import java.util.Scanner;
 import java.io.File;

@@ -2,6 +2,8 @@
  * Activity 2.5.2
  *
  *  The PhraseSolver class the PhraseSolverGame
+ * Laasya Koduri, Sean Kantorov 
+ * Period 7
  */
 import java.util.Scanner;
 import java.util.ArrayList;
