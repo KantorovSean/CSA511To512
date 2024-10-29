@@ -16,20 +16,8 @@ public class  Board
   Board()
   {
     //setting the phrase
+    solvedPhrase = "";
     phrase = loadPhrase();
-    
-    //setting up how much of the phrase they have solved so far
-    for (int index = 0; index < phrase.length(); index++)
-    {
-      if (phrase.substring(index, index + 1).equals(" "))
-      {
-        solvedPhrase += " ";
-      }
-      else 
-      {
-        solvedPhrase += "_";
-      }
-    }
 
     //setting the score val per correct letter
     setLetterValue();
@@ -105,11 +93,11 @@ public class  Board
     {
       if (tempPhrase.substring(i, i + 1).equals(" "))
       {
-        solvedPhrase += "  ";
+        solvedPhrase += " ";
       }  
       else
       {
-        solvedPhrase += "_ ";
+        solvedPhrase += "_";
       }
     }  
     
@@ -120,20 +108,20 @@ public class  Board
   {
     boolean foundLetter = false;
     String newSolvedPhrase = "";
+    int lastIndex = 0;
     
     for (int i = 0; i < phrase.length(); i++)
     {
-      if (phrase.substring(i, i + 1).equals(guess))
+      if ((String.valueOf(phrase.charAt(i)).equals(guess)))
       {
-        newSolvedPhrase += guess + " ";
+        newSolvedPhrase += solvedPhrase.substring(lastIndex, i) + guess;
+        lastIndex = i + 1;
         foundLetter = true;
       }
-      else
-      {
-        newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  
-      }
     }
-    solvedPhrase = newSolvedPhrase;
+    
+    solvedPhrase = newSolvedPhrase + solvedPhrase.substring(lastIndex);
+    System.out.println(solvedPhrase);
     return foundLetter;
   } 
 } 

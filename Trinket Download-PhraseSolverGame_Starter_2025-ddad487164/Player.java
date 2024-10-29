@@ -3,8 +3,6 @@
  * 
  * A Player class the PhraseSolverGame
  */
-import java.util.Scanner;
-
 public class Player
 {
   /* your code here - attributes */
@@ -40,10 +38,9 @@ public class Player
     return score += amount;
   }
 
-  public boolean nextTurn(boolean turnStatus)
+  public void nextTurn(boolean turnStatus)
   {
     turn = turnStatus;
-    return turn;
   }
 
 }
