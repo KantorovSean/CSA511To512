@@ -49,7 +49,7 @@ public class  Board
     int randomInt = (int) ((Math.random() * 10) + 1) * 100;    
     currentLetterValue = randomInt;
   }
-
+  //Evaluates whether or not user's guess is correct
   public boolean isSolved(String guess)
   {
     if (phrase.equals(guess))
@@ -90,7 +90,7 @@ public class  Board
         }
       }
     } catch (Exception e) { System.out.println("Error reading or parsing phrases.txt"); }
-    
+    //Iterates through partially solved phrase
     for (int i = 0; i < tempPhrase.length(); i++)
     {
       if (tempPhrase.substring(i, i + 1).equals(" "))
@@ -106,6 +106,7 @@ public class  Board
     return tempPhrase;
   } 
 
+//Instruction #5
 /*
  * Precondition:
  * user must guess a phrase
@@ -113,8 +114,10 @@ public class  Board
  * User-inputted phrase is evaluated
  * the correctly guessed phrase is outputted
  */
+//Instruction #9
   public boolean guessLetter(String guess)
   {
+    //Instruction #3
     //foundLetter variable is initialized to false
     boolean foundLetter = false;
     //newSolvedPhrase variable is initialized as an empty string
